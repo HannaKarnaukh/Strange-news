@@ -53,8 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				01391F392216B2180070C8A1 /* AppDelegate.swift */,
-				01391F3D2216B2180070C8A1 /* Main.storyboard */,
-				01391F422216B21A0070C8A1 /* LaunchScreen.storyboard */,
+				018813BC2216E2EB0059E0BC /* Storyboards */,
 				018813B92216DF4E0059E0BC /* Supporting files */,
 			);
 			path = "Strange news";
@@ -68,6 +67,15 @@
 			);
 			name = "Supporting files";
 			path = "Cleaned 'AppDelegate'";
+			sourceTree = "<group>";
+		};
+		018813BC2216E2EB0059E0BC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				01391F422216B21A0070C8A1 /* LaunchScreen.storyboard */,
+				01391F3D2216B2180070C8A1 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,7 +318,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C3A3A67LTZ;
-				INFOPLIST_FILE = "Strange news/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Strange news/Cleaned 'AppDelegate'/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,7 +336,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C3A3A67LTZ;
-				INFOPLIST_FILE = "Strange news/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Strange news/Cleaned 'AppDelegate'/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
