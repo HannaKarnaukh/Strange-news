@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		01391F3A2216B2180070C8A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01391F392216B2180070C8A1 /* AppDelegate.swift */; };
-		01391F3C2216B2180070C8A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01391F3B2216B2180070C8A1 /* ViewController.swift */; };
 		01391F3F2216B2180070C8A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01391F3D2216B2180070C8A1 /* Main.storyboard */; };
 		01391F412216B21A0070C8A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01391F402216B21A0070C8A1 /* Assets.xcassets */; };
 		01391F442216B21A0070C8A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01391F422216B21A0070C8A1 /* LaunchScreen.storyboard */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		01391F362216B2180070C8A1 /* Strange news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Strange news.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01391F392216B2180070C8A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		01391F3B2216B2180070C8A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		01391F3E2216B2180070C8A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01391F402216B21A0070C8A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01391F432216B21A0070C8A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,13 +53,21 @@
 			isa = PBXGroup;
 			children = (
 				01391F392216B2180070C8A1 /* AppDelegate.swift */,
-				01391F3B2216B2180070C8A1 /* ViewController.swift */,
 				01391F3D2216B2180070C8A1 /* Main.storyboard */,
-				01391F402216B21A0070C8A1 /* Assets.xcassets */,
 				01391F422216B21A0070C8A1 /* LaunchScreen.storyboard */,
-				01391F452216B21A0070C8A1 /* Info.plist */,
+				018813B92216DF4E0059E0BC /* Supporting files */,
 			);
 			path = "Strange news";
+			sourceTree = "<group>";
+		};
+		018813B92216DF4E0059E0BC /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				01391F452216B21A0070C8A1 /* Info.plist */,
+				01391F402216B21A0070C8A1 /* Assets.xcassets */,
+			);
+			name = "Supporting files";
+			path = "Cleaned 'AppDelegate'";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,7 +162,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01391F3C2216B2180070C8A1 /* ViewController.swift in Sources */,
 				01391F3A2216B2180070C8A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
