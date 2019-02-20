@@ -18,6 +18,10 @@ class ArticleTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        imageView?.contentMode = .scaleToFill
+    }
+    
+    override func prepareForReuse() {
         newsImageView.image = nil
         titleLabel.text = ""
         authorLabel.text = ""
@@ -25,7 +29,10 @@ class ArticleTableViewCell: UITableViewCell {
         descriptionTextView.text = ""
     }
     
-    func sutup() {
+    func setup() {
+        if let url = article?.urlToImage {
+            imageView?.dowloadFromServer(url: url)
+        }
         titleLabel.text = article?.title
         authorLabel.text = article?.author
         sourceNameLabel.text = article?.source?.name
