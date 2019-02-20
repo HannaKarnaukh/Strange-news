@@ -27,6 +27,7 @@
 		014E8E2F221D14E1001D9B33 /* SourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014E8E2D221D14E1001D9B33 /* SourceTableViewCell.swift */; };
 		014E8E30221D14E1001D9B33 /* SourceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014E8E2E221D14E1001D9B33 /* SourceTableViewCell.xib */; };
 		014E8E32221D1659001D9B33 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0133A93222170B0A0057BCFB /* ArticleTableViewCell.xib */; };
+		014E8E40221D5058001D9B33 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014E8E3F221D5058001D9B33 /* NewsViewController.swift */; };
 		0184F6DD221D0AD00047BD12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01EBFA8C221C9E7F00EDF2EA /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		014E8E2B221D14BC001D9B33 /* SourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesViewController.swift; sourceTree = "<group>"; };
 		014E8E2D221D14E1001D9B33 /* SourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTableViewCell.swift; sourceTree = "<group>"; };
 		014E8E2E221D14E1001D9B33 /* SourceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourceTableViewCell.xib; sourceTree = "<group>"; };
+		014E8E3F221D5058001D9B33 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		01EBFA8C221C9E7F00EDF2EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				0133A92F22170AE50057BCFB /* Cell */,
-				018813BF221703BA0059E0BC /* NewsViewController.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -181,6 +182,7 @@
 			children = (
 				014E8E2A221D148A001D9B33 /* Souces */,
 				0133A92C221705F30057BCFB /* News */,
+				014E8E3F221D5058001D9B33 /* NewsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -291,6 +293,7 @@
 				01391F3A2216B2180070C8A1 /* AppDelegate.swift in Sources */,
 				0117E1C4221B7EEC00731273 /* Extensions.swift in Sources */,
 				0117E1CE221C56FA00731273 /* NewsClient.swift in Sources */,
+				014E8E40221D5058001D9B33 /* NewsViewController.swift in Sources */,
 				0133A93F2218BCA50057BCFB /* APIRouter.swift in Sources */,
 				0133A92E221706980057BCFB /* News.swift in Sources */,
 				0133A93622170B420057BCFB /* Article.swift in Sources */,
