@@ -23,6 +23,9 @@
 		01391F3F2216B2180070C8A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01391F3D2216B2180070C8A1 /* Main.storyboard */; };
 		01391F442216B21A0070C8A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01391F422216B21A0070C8A1 /* LaunchScreen.storyboard */; };
 		014E8E28221D1020001D9B33 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014E8E26221D1020001D9B33 /* ArticleTableViewCell.swift */; };
+		014E8E2C221D14BC001D9B33 /* SourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014E8E2B221D14BC001D9B33 /* SourcesViewController.swift */; };
+		014E8E2F221D14E1001D9B33 /* SourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014E8E2D221D14E1001D9B33 /* SourceTableViewCell.swift */; };
+		014E8E30221D14E1001D9B33 /* SourceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014E8E2E221D14E1001D9B33 /* SourceTableViewCell.xib */; };
 		0184F6DD221D0AD00047BD12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01EBFA8C221C9E7F00EDF2EA /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +49,9 @@
 		01391F432216B21A0070C8A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01391F452216B21A0070C8A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		014E8E26221D1020001D9B33 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		014E8E2B221D14BC001D9B33 /* SourcesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesViewController.swift; sourceTree = "<group>"; };
+		014E8E2D221D14E1001D9B33 /* SourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTableViewCell.swift; sourceTree = "<group>"; };
+		014E8E2E221D14E1001D9B33 /* SourceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourceTableViewCell.xib; sourceTree = "<group>"; };
 		01EBFA8C221C9E7F00EDF2EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +126,24 @@
 			path = "Strange news";
 			sourceTree = "<group>";
 		};
+		014E8E2A221D148A001D9B33 /* Souces */ = {
+			isa = PBXGroup;
+			children = (
+				014E8E31221D14E5001D9B33 /* Cell */,
+				014E8E2B221D14BC001D9B33 /* SourcesViewController.swift */,
+			);
+			path = Souces;
+			sourceTree = "<group>";
+		};
+		014E8E31221D14E5001D9B33 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				014E8E2D221D14E1001D9B33 /* SourceTableViewCell.swift */,
+				014E8E2E221D14E1001D9B33 /* SourceTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		018813B92216DF4E0059E0BC /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +178,7 @@
 		018813BE2216F2270059E0BC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				014E8E2A221D148A001D9B33 /* Souces */,
 				0133A92C221705F30057BCFB /* News */,
 			);
 			path = Controllers;
@@ -218,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014E8E30221D14E1001D9B33 /* SourceTableViewCell.xib in Resources */,
 				0184F6DD221D0AD00047BD12 /* Assets.xcassets in Resources */,
 				01391F442216B21A0070C8A1 /* LaunchScreen.storyboard in Resources */,
 				01391F3F2216B2180070C8A1 /* Main.storyboard in Resources */,
@@ -256,6 +282,7 @@
 				0117E1C6221C20D600731273 /* Result.swift in Sources */,
 				0133A946221ACF150057BCFB /* Sources.swift in Sources */,
 				014E8E28221D1020001D9B33 /* ArticleTableViewCell.swift in Sources */,
+				014E8E2F221D14E1001D9B33 /* SourceTableViewCell.swift in Sources */,
 				0133A944221A866F0057BCFB /* APIClient.swift in Sources */,
 				0133A93A22171E490057BCFB /* ArticleSource.swift in Sources */,
 				0117E1C8221C231000731273 /* APIError.swift in Sources */,
@@ -265,6 +292,7 @@
 				0133A93F2218BCA50057BCFB /* APIRouter.swift in Sources */,
 				0133A92E221706980057BCFB /* News.swift in Sources */,
 				0133A93622170B420057BCFB /* Article.swift in Sources */,
+				014E8E2C221D14BC001D9B33 /* SourcesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
