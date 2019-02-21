@@ -17,7 +17,7 @@ struct QueryParameters: Hashable {
 }
 
 struct ParamValues {
-    static let category = ["business", "entertainment", "general", "health", "science", "sports", "technology"]
+    static let category = ["Business": "business", "Entertainment": "entertainment", "General": "general", "Health": "health", "Science": "science", "Sports": "sports", "Technology": "technology"]
     static let country = ["Argentina": "ae", "Australia": "ar"]
     static let source = ["ABC News": "abc-news"]
 }
