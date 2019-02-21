@@ -27,7 +27,9 @@
 		014E8E30221D14E1001D9B33 /* SourceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 014E8E2E221D14E1001D9B33 /* SourceTableViewCell.xib */; };
 		014E8E32221D1659001D9B33 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0133A93222170B0A0057BCFB /* ArticleTableViewCell.xib */; };
 		014E8E40221D5058001D9B33 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014E8E3F221D5058001D9B33 /* NewsViewController.swift */; };
+		014E8E44221D51B4001D9B33 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014E8E43221D51B4001D9B33 /* Constants.swift */; };
 		014E8E48221D5301001D9B33 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014E8E47221D5301001D9B33 /* Extensions.swift */; };
+		014E8E4D221D9D22001D9B33 /* ApiKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 014E8E4C221D9D22001D9B33 /* ApiKey.plist */; };
 		0184F6DD221D0AD00047BD12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01EBFA8C221C9E7F00EDF2EA /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +56,9 @@
 		014E8E2D221D14E1001D9B33 /* SourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTableViewCell.swift; sourceTree = "<group>"; };
 		014E8E2E221D14E1001D9B33 /* SourceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourceTableViewCell.xib; sourceTree = "<group>"; };
 		014E8E3F221D5058001D9B33 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		014E8E43221D51B4001D9B33 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		014E8E47221D5301001D9B33 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		014E8E4C221D9D22001D9B33 /* ApiKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKey.plist; sourceTree = "<group>"; };
 		01EBFA8C221C9E7F00EDF2EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +154,7 @@
 		014E8E46221D5226001D9B33 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				014E8E43221D51B4001D9B33 /* Constants.swift */,
 				014E8E47221D5301001D9B33 /* Extensions.swift */,
 			);
 			path = Helpers;
@@ -158,6 +163,7 @@
 		018813B92216DF4E0059E0BC /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				014E8E4C221D9D22001D9B33 /* ApiKey.plist */,
 				01391F452216B21A0070C8A1 /* Info.plist */,
 				01EBFA8C221C9E7F00EDF2EA /* Assets.xcassets */,
 			);
@@ -258,6 +264,7 @@
 				014E8E32221D1659001D9B33 /* ArticleTableViewCell.xib in Resources */,
 				014E8E30221D14E1001D9B33 /* SourceTableViewCell.xib in Resources */,
 				0184F6DD221D0AD00047BD12 /* Assets.xcassets in Resources */,
+				014E8E4D221D9D22001D9B33 /* ApiKey.plist in Resources */,
 				01391F442216B21A0070C8A1 /* LaunchScreen.storyboard in Resources */,
 				01391F3F2216B2180070C8A1 /* Main.storyboard in Resources */,
 			);
@@ -291,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0133A93C221722DF0057BCFB /* Source.swift in Sources */,
+				014E8E44221D51B4001D9B33 /* Constants.swift in Sources */,
 				0117E1CC221C43DD00731273 /* SourcesClient.swift in Sources */,
 				0117E1C6221C20D600731273 /* Result.swift in Sources */,
 				0133A946221ACF150057BCFB /* Sources.swift in Sources */,
