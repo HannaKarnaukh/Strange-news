@@ -1,24 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xOG-dM-rWF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--By Sources-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="YLp-Yx-uPk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iDU-JI-Wm4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="m6Z-57-khB"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="By Sources" image="source_icon" largeContentSizeImage="source_icon" selectedImage="source_icon" id="Obe-Ak-ZKV"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CVD-3l-nSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2074" y="-720"/>
+        </scene>
+        <!--All News-->
+        <scene sceneID="HTn-Jp-yNr">
+            <objects>
+                <viewController id="ZjL-6l-39y" customClass="NewsViewController" customModule="Strange_news" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X69-aL-TYo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34V-xf-Kfa">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Title" id="Ni7-eu-Pfz"/>
+                                </items>
+                            </navigationBar>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QQu-FB-xeJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="ZjL-6l-39y" id="vSB-Qu-roQ"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PPk-IT-gaO">
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZjL-6l-39y" id="9wW-fw-OtL"/>
+                                    <outlet property="delegate" destination="ZjL-6l-39y" id="5Ku-Dd-Xz5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QQu-FB-xeJ" firstAttribute="trailing" secondItem="Phy-8B-cXU" secondAttribute="trailing" id="4WO-Yv-ge3"/>
+                            <constraint firstItem="34V-xf-Kfa" firstAttribute="trailing" secondItem="Phy-8B-cXU" secondAttribute="trailing" id="CyA-YC-fOo"/>
+                            <constraint firstItem="PPk-IT-gaO" firstAttribute="trailing" secondItem="Phy-8B-cXU" secondAttribute="trailing" id="Evb-f5-9WJ"/>
+                            <constraint firstItem="QQu-FB-xeJ" firstAttribute="leading" secondItem="Phy-8B-cXU" secondAttribute="leading" id="IbL-XP-c39"/>
+                            <constraint firstItem="PPk-IT-gaO" firstAttribute="leading" secondItem="Phy-8B-cXU" secondAttribute="leading" id="LIR-dE-9pC"/>
+                            <constraint firstItem="34V-xf-Kfa" firstAttribute="top" secondItem="Phy-8B-cXU" secondAttribute="top" id="OZp-gt-oGB"/>
+                            <constraint firstItem="QQu-FB-xeJ" firstAttribute="top" secondItem="34V-xf-Kfa" secondAttribute="bottom" id="YeC-7n-36O"/>
+                            <constraint firstItem="34V-xf-Kfa" firstAttribute="leading" secondItem="Phy-8B-cXU" secondAttribute="leading" id="qyW-jf-xxz"/>
+                            <constraint firstItem="PPk-IT-gaO" firstAttribute="top" secondItem="QQu-FB-xeJ" secondAttribute="bottom" id="t6c-pR-DDE"/>
+                            <constraint firstItem="Phy-8B-cXU" firstAttribute="bottom" secondItem="PPk-IT-gaO" secondAttribute="bottom" id="yCJ-XY-mpL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Phy-8B-cXU"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="All News" image="news_icon" selectedImage="news_icon" id="aJ0-ho-gff"/>
+                    <connections>
+                        <outlet property="searchBar" destination="QQu-FB-xeJ" id="GzY-Ie-uRK"/>
+                        <outlet property="tableView" destination="PPk-IT-gaO" id="bzj-bA-wgN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cm4-Xw-0k1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1002" y="-701"/>
+        </scene>
+        <!--Top Headlines-->
+        <scene sceneID="XTW-fn-Gf7">
+            <objects>
+                <viewController id="zGu-E9-VGT" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uFl-SZ-coN" customClass="ResultsView" customModule="Strange_news" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jBl-wV-eOb"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Top Headlines" image="top_icon" selectedImage="top_icon" id="b2V-DA-BG7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TAx-42-BeI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="167" y="-720"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="nxP-WO-geG">
+            <objects>
+                <tabBarController id="xOG-dM-rWF" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AKi-8I-Ccc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="zGu-E9-VGT" kind="relationship" relationship="viewControllers" id="Gx4-WX-9uF"/>
+                        <segue destination="ZjL-6l-39y" kind="relationship" relationship="viewControllers" id="3RQ-cY-FRq"/>
+                        <segue destination="YLp-Yx-uPk" kind="relationship" relationship="viewControllers" id="qrj-E3-OGC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nk8-uh-Zws" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1132" y="-1510"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="news_icon" width="32" height="26"/>
+        <image name="source_icon" width="32" height="32"/>
+        <image name="top_icon" width="32" height="30"/>
+    </resources>
 </document>
