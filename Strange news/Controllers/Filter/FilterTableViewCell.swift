@@ -9,16 +9,22 @@
 import UIKit
 
 class FilterTableViewCell: UITableViewCell {
+    
+    @IBOutlet var paramValueLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
+}
 
+extension FilterTableViewCell {
+    static let identifier = String(describing: FilterTableViewCell.self)
+    
+    static var nib: UINib {
+        return UINib(nibName: identifier, bundle: nil)
+    }
 }
