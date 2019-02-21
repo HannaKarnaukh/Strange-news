@@ -14,15 +14,20 @@ class NewsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    @IBOutlet weak var sourcesButton: UIButton!
+    @IBOutlet weak var countryButton: UIButton!
+    @IBOutlet weak var categoryButton: UIButton!
     var newsPaging = NewsPaging()
     let newsClient = NewsClient()
     var articles = [Article]()
+    
+    var isPaging = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         newsPaging = NewsPaging()
         setup()
-        loadNews(nil, page: 1)
+        loadNews(nil, page: NewsPaging.startPage)
     }
     
     func setup() {
@@ -33,9 +38,11 @@ class NewsViewController: UIViewController {
     }
     
     func loadNews(_ searchText: String?, page: Int) {
-        if searchText != nil {
+        if !isPaging {
             articles = [Article]()
+            tableView.reloadData()
         }
+        
         newsClient.getEverything(searchText: searchText ?? newsPaging.searchText,
                                  source: newsPaging.source,
                                  page: page) { [weak self] result in
@@ -45,15 +52,11 @@ class NewsViewController: UIViewController {
                     let news = news else {
                     return
                 }
+                self.isPaging = false
                 
-                if self.articles.isEmpty {
-                    self.articles = news.articles
-                } else {
-                    self.articles += news.articles
-                    print("🐢🐢🐢🐢 \(self.articles.count)")
-                }
+                self.articles += news.articles
                 self.newsPaging.maxPagesCount = news.totalResultsCount
-                print("🐻🐻🐻 \(news.totalResultsCount!)")
+                print("🐻🐻🐻 \(news.totalResultsCount!)  🐢🐢🐢🐢 \(self.articles.count)")
                 self.tableView.reloadData()
                 
             case .error(let error):
@@ -64,8 +67,28 @@ class NewsViewController: UIViewController {
     
     func increasePages() {
         let page = newsPaging.increase()
+        isPaging = true
         loadNews(nil, page: page)
+    }
+    
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "pushToFilterSegue", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let button = sender as? UIButton,
+            let filterVC = segue.destination as? FilterViewController,
+            let param = button.titleLabel?.text else {
+            return
+        }
         
+        filterVC.parameter = param
+        filterVC.selectedParamKey = newsPaging.getKey(for: param)
+        
+        filterVC.onSelectValue = { [weak self] paramKey in
+            self?.newsPaging.set(paramKey, for: param)
+            self?.loadNews(nil, page: NewsPaging.startPage)
+        }
     }
 }
 
@@ -98,6 +121,7 @@ extension NewsViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+//MARK: - UISearchBarDelegate
 extension NewsViewController: UISearchBarDelegate {
     @objc func tapGestureAction() {
         searchBar.text = ""
@@ -115,6 +139,6 @@ extension NewsViewController: UISearchBarDelegate {
         newsPaging.searchText = searchText
         tapGestureAction()
         tableView.setContentOffset(.zero, animated: false)
-        loadNews(searchText, page: 1)
+        loadNews(searchText, page: NewsPaging.startPage)
     }
 }
