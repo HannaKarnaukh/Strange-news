@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleTableViewCell" rowHeight="130" id="KGk-i7-Jjw" customClass="ArticleTableViewCell" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArticleTableViewCell" rowHeight="130" id="KGk-i7-Jjw" customClass="ArticleTableViewCell" customModule="Strange_news" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="134"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -52,26 +53,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSA-Tn-8nM">
-                                <rect key="frame" x="0.0" y="35.5" width="220" height="64"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIC-OG-4EC">
+                                <rect key="frame" x="5" y="34.5" width="210" height="42"/>
+                                <string key="text">Label s bdsbfbsdv sear chBar.en dEditin g(tru e)sear chB ar.endEd itin g(true)searc hBar. endEd iting(true)s earchBar.endEditing(true)</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="oIC-OG-4EC" secondAttribute="trailing" constant="5" id="4af-Km-ppm"/>
                             <constraint firstItem="4ce-ks-0Gl" firstAttribute="top" secondItem="Eli-W0-Dzg" secondAttribute="bottom" id="7Dm-vz-dcK"/>
                             <constraint firstItem="Eli-W0-Dzg" firstAttribute="centerX" secondItem="BUA-fD-uEt" secondAttribute="centerX" id="Cb2-ff-kkd"/>
+                            <constraint firstItem="oIC-OG-4EC" firstAttribute="leading" secondItem="BUA-fD-uEt" secondAttribute="leading" constant="5" id="CfC-kt-OyL"/>
                             <constraint firstAttribute="trailing" secondItem="4ce-ks-0Gl" secondAttribute="trailing" constant="5" id="D3M-Wg-7QD"/>
-                            <constraint firstAttribute="bottom" secondItem="aSA-Tn-8nM" secondAttribute="bottom" id="Eqv-X4-o9I"/>
-                            <constraint firstItem="aSA-Tn-8nM" firstAttribute="leading" secondItem="BUA-fD-uEt" secondAttribute="leading" id="L94-bF-yoC"/>
-                            <constraint firstItem="aSA-Tn-8nM" firstAttribute="top" secondItem="P4z-Ub-3hn" secondAttribute="bottom" constant="3" id="OmE-J2-eKo"/>
                             <constraint firstItem="4ce-ks-0Gl" firstAttribute="bottom" secondItem="P4z-Ub-3hn" secondAttribute="bottom" id="Sd4-S5-nmh"/>
                             <constraint firstItem="Eli-W0-Dzg" firstAttribute="width" secondItem="BUA-fD-uEt" secondAttribute="width" multiplier="0.9" id="SgN-rB-BIn"/>
                             <constraint firstItem="4ce-ks-0Gl" firstAttribute="leading" secondItem="P4z-Ub-3hn" secondAttribute="trailing" constant="5" id="WqA-PO-LD8"/>
-                            <constraint firstAttribute="trailing" secondItem="aSA-Tn-8nM" secondAttribute="trailing" id="jXC-yj-8Jp"/>
+                            <constraint firstItem="oIC-OG-4EC" firstAttribute="top" secondItem="P4z-Ub-3hn" secondAttribute="bottom" constant="2" id="fmR-CW-Vv5"/>
                             <constraint firstItem="Eli-W0-Dzg" firstAttribute="top" secondItem="BUA-fD-uEt" secondAttribute="top" id="rLb-v1-0xd"/>
                         </constraints>
                     </view>
@@ -99,7 +99,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="authorLabel" destination="iYf-ZS-dXf" id="rko-Yl-QDN"/>
-                <outlet property="descriptionTextView" destination="aSA-Tn-8nM" id="xQq-tt-5a0"/>
+                <outlet property="descriptionLabel" destination="oIC-OG-4EC" id="ZFn-C4-g6s"/>
                 <outlet property="newsImageView" destination="GoM-eq-YBo" id="aav-pa-VJI"/>
                 <outlet property="sourceNameLabel" destination="4ce-ks-0Gl" id="PkL-xj-KY5"/>
                 <outlet property="titleLabel" destination="Eli-W0-Dzg" id="dMT-mR-kU8"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ArticleTableViewCell: UITableViewCell {
     var article: Article?
@@ -14,7 +15,7 @@ class ArticleTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var authorLabel: UILabel!
     @IBOutlet var sourceNameLabel: UILabel!
-    @IBOutlet var descriptionTextView: UITextView!
+    @IBOutlet var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,17 +27,15 @@ class ArticleTableViewCell: UITableViewCell {
         titleLabel.text = ""
         authorLabel.text = ""
         sourceNameLabel.text = ""
-        descriptionTextView.text = ""
+        descriptionLabel.text = ""
     }
     
     func setup() {
-        if let url = article?.urlToImage {
-            imageView?.dowloadFromServer(url: url)
-        }
+        newsImageView.sd_setImage(with: article?.urlToImage, placeholderImage: UIImage(named: "test_image"))
         titleLabel.text = article?.title
         authorLabel.text = article?.author
         sourceNameLabel.text = article?.source?.name
-        descriptionTextView.text = article?.description
+        descriptionLabel.text = article?.description
     }
 }
 
