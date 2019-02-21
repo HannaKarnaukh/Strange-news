@@ -21,7 +21,9 @@ class NewsViewController: UIViewController {
     var newsPaging = NewsPaging()
     let newsClient = NewsClient()
     var articles = [Article]()
+    
     let refreshControl = UIRefreshControl()
+    let activityIndicator = UIActivityIndicatorView()
     
     var isPaging = false
     
@@ -38,6 +40,11 @@ class NewsViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
         tableView.addSubview(refreshControl)
         
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .gray
+        view.addSubview(activityIndicator)
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
         self.view.addGestureRecognizer(tap)
         tap.cancelsTouchesInView = true
@@ -48,11 +55,12 @@ class NewsViewController: UIViewController {
             articles = [Article]()
             tableView.reloadData()
         }
-        
+        activityIndicator.startAnimating()
         newsClient.getEverything(searchText: searchText ?? newsPaging.searchText,
                                  source: newsPaging.source,
                                  page: page) { [weak self] result in
             self?.refreshControl.endRefreshing()
+            self?.activityIndicator.stopAnimating()
             switch result {
             case .succes(let news):
                 guard let self = self,
