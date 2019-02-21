@@ -65,12 +65,8 @@ extension FilterViewController: UITableViewDataSource, UITableViewDelegate {
         let key = paramsKeys[indexPath.row]
         cell.paramValueLabel.text = key
         
-        cell.accessoryType = .none
-        cell.isSelected = false
-        if selectedParamKey == key {
-            cell.accessoryType = .checkmark
-            cell.isSelected = true
-        }
+        cell.isSelected = selectedParamKey == key
+        cell.accessoryType = cell.isSelected ? .checkmark : .none
         return cell
     }
     
