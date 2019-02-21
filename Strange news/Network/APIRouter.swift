@@ -10,7 +10,7 @@ import Foundation
 
 enum APIRouter {
     case getTopHeadlines(String?, String?, String?, String?, Int)
-    case getEverything(String?, String, Int)
+    case getEverything(String?, String?, Int)
     case getSources(String?, String?)
 }
  
@@ -45,7 +45,7 @@ extension APIRouter {
             
         case  .getEverything(let searchText, let source, let page):
             let items = [ URLQueryItem(name: QueryParameters.searchText, value: searchText),
-                          URLQueryItem(name: QueryParameters.sources, value: source),
+                          URLQueryItem(name: QueryParameters.sources, value: source ?? "all"),
                           URLQueryItem.init(name: QueryParameters.page, value: String(page))]
             return items
             

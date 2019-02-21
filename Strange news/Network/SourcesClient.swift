@@ -19,8 +19,10 @@ final class SourcesClient: APIClient {
                  country: String?,
                  completion: @escaping (Result<Sources?, APIError>) -> Void) {
         
-        var request = APIRouter.getSources(category, country).request
-        request.setValue(Constants.apiKey, forHTTPHeaderField: Constants.apiKeyKey)
+        let countryValue = country != nil ? ParamValues.country[country!] : nil
+        
+        var request = APIRouter.getSources(category, countryValue).request
+        request.setValue(Constants.apiKey(), forHTTPHeaderField: Constants.apiKeyKey)
         
         fetch(with: request, decode: { json -> Sources? in
             guard let sources = json as? Sources else {

@@ -17,13 +17,16 @@ final class NewsClient: APIClient {
     
     func getTopHeadlines(category: String?,
                          country: String?,
-                         sources: String?,
+                         source: String?,
                          searchText: String?,
                          page: Int = 0,
                          completion: @escaping (Result<News?, APIError>) -> Void) {
         
-        var request = APIRouter.getTopHeadlines(category, country, sources, searchText, page).request
-        request.addValue(Constants.apiKey, forHTTPHeaderField: Constants.apiKeyKey)
+        let countryValue = country != nil ? ParamValues.country[country!] : nil
+        let sourcesValu = source != nil ? ParamValues.source[source!] : nil
+        
+        var request = APIRouter.getTopHeadlines(category, countryValue, sourcesValu, searchText, page).request
+        request.addValue(Constants.apiKey(), forHTTPHeaderField: Constants.apiKeyKey)
         
         fetch(with: request, decode: { json -> News? in
             guard let topHeadlines = json as? News else {
@@ -34,12 +37,14 @@ final class NewsClient: APIClient {
     }
     
     func getEverything(searchText: String?,
-                       source: String = "all",
-                       page: Int = 2,
+                       source: String?,
+                       page: Int = 5,
                        completion: @escaping (Result<News?, APIError>) -> Void) {
         
-        var request = APIRouter.getEverything(searchText, source, page).request
-        request.setValue(Constants.apiKey, forHTTPHeaderField: Constants.apiKeyKey)
+        let sourcesValu = source != nil ? ParamValues.source[source!] : nil
+        
+        var request = APIRouter.getEverything(searchText, sourcesValu, page).request
+        request.setValue(Constants.apiKey(), forHTTPHeaderField: Constants.apiKeyKey)
         
         fetch(with: request, decode: { json -> News? in
             guard let news = json as? News else {

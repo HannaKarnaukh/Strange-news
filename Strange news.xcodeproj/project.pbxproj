@@ -135,10 +135,10 @@
 				01391F392216B2180070C8A1 /* AppDelegate.swift */,
 				014E8E49221D708F001D9B33 /* Managers */,
 				014E8E46221D5226001D9B33 /* Helpers */,
+				0133A93D221753F20057BCFB /* Network */,
 				018813BD2216F21E0059E0BC /* Models */,
 				018813BE2216F2270059E0BC /* Controllers */,
 				018813BC2216E2EB0059E0BC /* Storyboards */,
-				0133A93D221753F20057BCFB /* Network */,
 				018813B92216DF4E0059E0BC /* Supporting files */,
 			);
 			path = "Strange news";
