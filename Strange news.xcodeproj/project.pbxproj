@@ -32,6 +32,8 @@
 		014E8E48221D5301001D9B33 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014E8E47221D5301001D9B33 /* Extensions.swift */; };
 		014E8E4B221D70BC001D9B33 /* NewsPaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014E8E4A221D70BC001D9B33 /* NewsPaging.swift */; };
 		014E8E4D221D9D22001D9B33 /* ApiKey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 014E8E4C221D9D22001D9B33 /* ApiKey.plist */; };
+		017CBDAE221E73220087B734 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017CBDAD221E73220087B734 /* FilterViewController.swift */; };
+		017CBDB0221E95D20087B734 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017CBDAF221E95D20087B734 /* FilterTableViewCell.swift */; };
 		0184F6DD221D0AD00047BD12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01EBFA8C221C9E7F00EDF2EA /* Assets.xcassets */; };
 		DFC7A3BB948AE51E5BB1CFB3 /* Pods_Strange_news.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDE3CCB79C91F14ABF75FF0 /* Pods_Strange_news.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +66,8 @@
 		014E8E47221D5301001D9B33 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		014E8E4A221D70BC001D9B33 /* NewsPaging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPaging.swift; sourceTree = "<group>"; };
 		014E8E4C221D9D22001D9B33 /* ApiKey.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKey.plist; sourceTree = "<group>"; };
+		017CBDAD221E73220087B734 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		017CBDAF221E95D20087B734 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 		01EBFA8C221C9E7F00EDF2EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		8BDE3CCB79C91F14ABF75FF0 /* Pods_Strange_news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Strange_news.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AED4CC280A14791274F02DE9 /* Pods-Strange news.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Strange news.debug.xcconfig"; path = "Target Support Files/Pods-Strange news/Pods-Strange news.debug.xcconfig"; sourceTree = "<group>"; };
@@ -182,6 +186,15 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		017CBDAC221E72E50087B734 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				017CBDAF221E95D20087B734 /* FilterTableViewCell.swift */,
+				017CBDAD221E73220087B734 /* FilterViewController.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		018813B92216DF4E0059E0BC /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +230,7 @@
 		018813BE2216F2270059E0BC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				017CBDAC221E72E50087B734 /* Filter */,
 				014E8E2A221D148A001D9B33 /* Souces */,
 				0133A92C221705F30057BCFB /* News */,
 			);
@@ -382,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				017CBDAE221E73220087B734 /* FilterViewController.swift in Sources */,
 				0133A93C221722DF0057BCFB /* Source.swift in Sources */,
 				014E8E44221D51B4001D9B33 /* Constants.swift in Sources */,
 				014E8E42221D5166001D9B33 /* Constants+Parameters.swift in Sources */,
@@ -400,6 +415,7 @@
 				014E8E40221D5058001D9B33 /* NewsViewController.swift in Sources */,
 				0133A93F2218BCA50057BCFB /* APIRouter.swift in Sources */,
 				0133A92E221706980057BCFB /* News.swift in Sources */,
+				017CBDB0221E95D20087B734 /* FilterTableViewCell.swift in Sources */,
 				0133A93622170B420057BCFB /* Article.swift in Sources */,
 				014E8E2C221D14BC001D9B33 /* SourcesViewController.swift in Sources */,
 			);
