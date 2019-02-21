@@ -13,8 +13,10 @@ enum APIError: Error {
     case decodableProcessFailed
     case invalidData
     case responseUnsuccessful
-    
-    var localizedDescription: String {
+}
+
+extension APIError: CustomStringConvertible {
+    var description: String {
         switch self {
         case .requestFailed:
             return "Request Failed"

@@ -56,15 +56,17 @@ class NewsViewController: UIViewController {
             tableView.reloadData()
         }
         activityIndicator.startAnimating()
-        newsClient.getEverything(searchText: searchText ?? newsPaging.searchText,
-                                 source: newsPaging.source,
-                                 page: page) { [weak self] result in
-            self?.refreshControl.endRefreshing()
-            self?.activityIndicator.stopAnimating()
+        newsClient.getEverything(searchText: searchText ?? newsPaging.searchText, source: newsPaging.source, page: page) { [weak self] result in
+        
+            guard let self = self else {
+                return
+            }
+            self.refreshControl.endRefreshing()
+            self.activityIndicator.stopAnimating()
+            
             switch result {
             case .succes(let news):
-                guard let self = self,
-                    let news = news else {
+                guard let news = news else {
                     return
                 }
                 self.isPaging = false
@@ -75,6 +77,7 @@ class NewsViewController: UIViewController {
                 self.tableView.reloadData()
                 
             case .error(let error):
+                error.alert(with: self)
                 print("🐻🐻🐻Error - \(error.localizedDescription)🐻🐻🐻")
             }
         }
