@@ -1,21 +1,80 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SourceTableViewCell" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="KGk-i7-Jjw" customClass="SourceTableViewCell" customModule="Strange_news" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="94.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMt-8X-Pzb">
+                        <rect key="frame" x="16" y="10" width="288" height="15.5"/>
+                        <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="14"/>
+                        <color key="textColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="country:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyA-O2-HTI">
+                        <rect key="frame" x="15" y="25.5" width="38" height="14"/>
+                        <fontDescription key="fontDescription" name="Palatino-Italic" family="Palatino" pointSize="11"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXG-g7-OiZ">
+                        <rect key="frame" x="279" y="25.5" width="26" height="14"/>
+                        <fontDescription key="fontDescription" name="Palatino-Italic" family="Palatino" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjU-Ej-HR5">
+                        <rect key="frame" x="58" y="25.5" width="26" height="14"/>
+                        <fontDescription key="fontDescription" name="Palatino-Italic" family="Palatino" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SM3-PY-m5v">
+                        <rect key="frame" x="15" y="42.5" width="290" height="42"/>
+                        <string key="text">Labelcate gory categ orycategorycat egorycatego rycateg oryc ategory categorycategor  ycategory  categoryca tegorycategoryc ategoryc ategoryc ate goryc ategorycat egorycategorycate gorycategorycategory</string>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="xMt-8X-Pzb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="0Ge-wq-kuX"/>
+                    <constraint firstItem="SM3-PY-m5v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="2GX-rG-mgc"/>
+                    <constraint firstItem="xMt-8X-Pzb" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.9" id="5jl-b3-lYM"/>
+                    <constraint firstAttribute="trailing" secondItem="VXG-g7-OiZ" secondAttribute="trailing" constant="15" id="7Ja-VX-bCk"/>
+                    <constraint firstAttribute="trailing" secondItem="SM3-PY-m5v" secondAttribute="trailing" constant="15" id="7Z6-6W-KWy"/>
+                    <constraint firstItem="xMt-8X-Pzb" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="I55-iT-4oP"/>
+                    <constraint firstItem="bjU-Ej-HR5" firstAttribute="leading" secondItem="eyA-O2-HTI" secondAttribute="trailing" constant="5" id="Inq-eW-I0W"/>
+                    <constraint firstItem="SM3-PY-m5v" firstAttribute="top" secondItem="eyA-O2-HTI" secondAttribute="bottom" constant="3" id="JBW-ko-TXz"/>
+                    <constraint firstItem="eyA-O2-HTI" firstAttribute="top" secondItem="xMt-8X-Pzb" secondAttribute="bottom" id="OYJ-50-DQF"/>
+                    <constraint firstItem="bjU-Ej-HR5" firstAttribute="bottom" secondItem="eyA-O2-HTI" secondAttribute="bottom" id="Zff-UU-Ns5"/>
+                    <constraint firstItem="eyA-O2-HTI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="ipi-0U-xpP"/>
+                    <constraint firstItem="VXG-g7-OiZ" firstAttribute="top" secondItem="xMt-8X-Pzb" secondAttribute="bottom" id="k1o-rR-nfZ"/>
+                    <constraint firstItem="bjU-Ej-HR5" firstAttribute="top" secondItem="xMt-8X-Pzb" secondAttribute="bottom" id="xNZ-tt-2ha"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="categoryLabel" destination="VXG-g7-OiZ" id="16b-gn-jAH"/>
+                <outlet property="countryLabel" destination="bjU-Ej-HR5" id="aYC-zb-Z9k"/>
+                <outlet property="descriptionLabel" destination="SM3-PY-m5v" id="vl5-C0-4U0"/>
+                <outlet property="nameLabel" destination="xMt-8X-Pzb" id="Pbs-io-In0"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="173.16341829085459"/>
         </tableViewCell>
     </objects>
 </document>
