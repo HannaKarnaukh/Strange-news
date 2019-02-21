@@ -11,8 +11,15 @@ import Foundation
 struct NewsPaging {
     private let pagingStep = 1
     private var page: Int
-    
     var maxPagesCount: Int?
+    
+    static var startPage: Int {
+        return 1
+    }
+    
+    var currentPage: Int {
+        return page
+    }
     
     var category: String?
     var country: String?
@@ -39,5 +46,31 @@ struct NewsPaging {
         source = nil
         searchText = nil
         page = pagingStep
+    }
+    
+    func getKey(for param: String) -> String? {
+        switch param.lowercased() {
+        case QueryParameters.category:
+            return category
+        case QueryParameters.country:
+            return country
+        case QueryParameters.sources:
+            return source
+        default:
+            return nil
+        }
+    }
+    
+    mutating func set(_ key: String?, for param: String) {
+        switch param.lowercased() {
+        case QueryParameters.category:
+            category = key
+        case QueryParameters.country:
+            country = key
+        case QueryParameters.sources:
+            source = key
+        default:
+            return
+        }
     }
 }
