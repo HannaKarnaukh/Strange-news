@@ -11,6 +11,7 @@ import UIKit
 
 class NewsViewController: UIViewController {
     
+    //MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -20,6 +21,7 @@ class NewsViewController: UIViewController {
     var newsPaging = NewsPaging()
     let newsClient = NewsClient()
     var articles = [Article]()
+    let refreshControl = UIRefreshControl()
     
     var isPaging = false
     
@@ -32,6 +34,10 @@ class NewsViewController: UIViewController {
     
     func setup() {
         tableView.register(ArticleTableViewCell.nib, forCellReuseIdentifier: ArticleTableViewCell.identifier)
+        
+        refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+        tableView.addSubview(refreshControl)
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
         self.view.addGestureRecognizer(tap)
         tap.cancelsTouchesInView = true
@@ -46,6 +52,7 @@ class NewsViewController: UIViewController {
         newsClient.getEverything(searchText: searchText ?? newsPaging.searchText,
                                  source: newsPaging.source,
                                  page: page) { [weak self] result in
+            self?.refreshControl.endRefreshing()
             switch result {
             case .succes(let news):
                 guard let self = self,
@@ -69,6 +76,10 @@ class NewsViewController: UIViewController {
         let page = newsPaging.increase()
         isPaging = true
         loadNews(nil, page: page)
+    }
+    
+    @objc func refresh() {
+        self.loadNews(nil, page: NewsPaging.startPage)
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
