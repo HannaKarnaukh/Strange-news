@@ -35,9 +35,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QQu-FB-xeJ">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QQu-FB-xeJ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="56"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
@@ -51,16 +52,16 @@
                                 <rect key="frame" x="0.0" y="76" width="375" height="40"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter_icon" translatesAutoresizingMaskIntoConstraints="NO" id="kuZ-e3-K3L">
-                                        <rect key="frame" x="10" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="10" y="4" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="kuZ-e3-K3L" secondAttribute="height" multiplier="1:1" id="iyy-pU-sB5"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98v-cu-8OS">
-                                        <rect key="frame" x="65" y="0.0" width="290" height="40"/>
+                                        <rect key="frame" x="57" y="4.5" width="298" height="31"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsQ-3z-es0">
-                                                <rect key="frame" x="0.0" y="0.0" width="70" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="Category">
                                                     <color key="titleColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -70,7 +71,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VB1-VN-kYF">
-                                                <rect key="frame" x="113" y="0.0" width="64" height="40"/>
+                                                <rect key="frame" x="117" y="0.0" width="64" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="Country">
                                                     <color key="titleColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -80,7 +81,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qO1-lX-tgT">
-                                                <rect key="frame" x="232" y="0.0" width="58" height="40"/>
+                                                <rect key="frame" x="240" y="0.0" width="58" height="31"/>
                                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                                                 <state key="normal" title="Sources">
                                                     <color key="titleColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -107,14 +108,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="98v-cu-8OS" secondAttribute="trailing" constant="20" id="9aD-tj-nXS"/>
-                                    <constraint firstItem="98v-cu-8OS" firstAttribute="height" secondItem="kuZ-e3-K3L" secondAttribute="height" id="J32-Ve-VNB"/>
                                     <constraint firstItem="98v-cu-8OS" firstAttribute="leading" secondItem="kuZ-e3-K3L" secondAttribute="trailing" constant="15" id="KG9-yd-T7c"/>
                                     <constraint firstAttribute="height" constant="40" id="aPc-mn-AO6"/>
                                     <constraint firstAttribute="width" secondItem="D4f-AU-mse" secondAttribute="height" multiplier="75:8" id="cAL-cA-zMD"/>
                                     <constraint firstItem="kuZ-e3-K3L" firstAttribute="leading" secondItem="D4f-AU-mse" secondAttribute="leading" constant="10" id="dCa-Zv-tAA"/>
                                     <constraint firstItem="kuZ-e3-K3L" firstAttribute="centerY" secondItem="D4f-AU-mse" secondAttribute="centerY" id="eym-Kf-esM"/>
-                                    <constraint firstItem="kuZ-e3-K3L" firstAttribute="top" secondItem="D4f-AU-mse" secondAttribute="top" id="imr-K1-zNt"/>
-                                    <constraint firstAttribute="bottom" secondItem="kuZ-e3-K3L" secondAttribute="bottom" id="shA-RN-jbY"/>
+                                    <constraint firstItem="kuZ-e3-K3L" firstAttribute="height" secondItem="D4f-AU-mse" secondAttribute="height" multiplier="0.8" id="we2-EW-GKc"/>
                                     <constraint firstItem="98v-cu-8OS" firstAttribute="centerY" secondItem="D4f-AU-mse" secondAttribute="centerY" id="zdh-9t-kZV"/>
                                 </constraints>
                             </view>
