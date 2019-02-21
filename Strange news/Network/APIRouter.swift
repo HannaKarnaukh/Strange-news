@@ -65,6 +65,7 @@ extension APIRouter {
     
     var request: URLRequest {
         let url = urlComponents.url!
+        print("🌍🌍🌍\(url)🌍🌍🌍")
         return URLRequest(url: url)
     }
 }
