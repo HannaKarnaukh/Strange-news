@@ -28,7 +28,7 @@ class FilterViewController: UIViewController {
             return
         }
         self.navigationController?.title = "Select \(parameter)"
-        switch parameter.lowercased() {
+        switch parameter {
         case QueryParameters.category:
             self.paramsKeys = Array(ParamValues.category.keys)
         case QueryParameters.country:

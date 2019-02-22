@@ -49,7 +49,7 @@ struct NewsPaging {
     }
     
     func getKey(for param: String) -> String? {
-        switch param.lowercased() {
+        switch param {
         case QueryParameters.category:
             return category
         case QueryParameters.country:
@@ -62,7 +62,7 @@ struct NewsPaging {
     }
     
     mutating func set(_ key: String?, for param: String) {
-        switch param.lowercased() {
+        switch param {
         case QueryParameters.category:
             category = key
         case QueryParameters.country:
