@@ -65,8 +65,10 @@ struct NewsPaging {
         switch param {
         case QueryParameters.category:
             category = key
+            country = nil
         case QueryParameters.country:
             country = key
+            category = nil
         case QueryParameters.sources:
             source = key
         default:
