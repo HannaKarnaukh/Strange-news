@@ -230,9 +230,9 @@
 		018813BE2216F2270059E0BC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				017CBDAC221E72E50087B734 /* Filter */,
-				014E8E2A221D148A001D9B33 /* Souces */,
 				0133A92C221705F30057BCFB /* News */,
+				014E8E2A221D148A001D9B33 /* Souces */,
+				017CBDAC221E72E50087B734 /* Filter */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -251,7 +251,6 @@
 				AED4CC280A14791274F02DE9 /* Pods-Strange news.debug.xcconfig */,
 				E3CA5957B5484B6B768DAC19 /* Pods-Strange news.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
