@@ -10,30 +10,47 @@ import UIKit
 
 class BaseNewsTableViewController: UIViewController {
 
-    //MARK: - Properties
-    var tableView: UITableView!
+    // MARK: - Properties
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
+    var newsPaging = NewsPaging()
+    let newsClient = NewsClient()
     var articles = [Article]()
     
+    let refreshControl = UIRefreshControl()
+    let activityIndicator = UIActivityIndicatorView()
+    
+    var isPaging = false
+
+    // MARK: Methodths
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
+    func setup() {
+        tableView.register(ArticleTableViewCell.nib, forCellReuseIdentifier: ArticleTableViewCell.identifier)
+        
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .gray
+        view.addSubview(activityIndicator)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
+        self.view.addGestureRecognizer(tap)
+        tap.cancelsTouchesInView = false
     }
+    
+    func increasePages() { }
 }
 
-//MARK:- UITableViewDataSource, UITableViewDelegate
+// MARK: - UITableViewDataSource, UITableViewDelegate
 extension BaseNewsTableViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.identifier, for: indexPath) as? ArticleTableViewCell else {
             return UITableViewCell()
         }
@@ -48,5 +65,26 @@ extension BaseNewsTableViewController: UITableViewDataSource, UITableViewDelegat
             return
         }
         UIApplication.shared.open(url)
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension BaseNewsTableViewController: UISearchBarDelegate {
+    @objc func tapGestureAction() {
+        searchBar.text = ""
+        searchBar.endEditing(true)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        tapGestureAction()
+        newsPaging.searchText = nil
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        newsPaging.resetPaging()
+        let searchText = searchBar.text
+        newsPaging.searchText = searchText
+        tapGestureAction()
+        tableView.setContentOffset(.zero, animated: false)
     }
 }
