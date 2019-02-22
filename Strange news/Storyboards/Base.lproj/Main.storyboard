@@ -27,11 +27,8 @@
                                             <constraint firstAttribute="width" secondItem="eXB-Xk-7wN" secondAttribute="height" id="fqQ-WI-LBQ"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGn-2W-wGl">
-                                        <rect key="frame" x="112" y="4.5" width="70" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="xpy-5J-cUj"/>
-                                        </constraints>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGn-2W-wGl">
+                                        <rect key="frame" x="112" y="0.5" width="70" height="31"/>
                                         <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                                         <state key="normal" title="Category">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -42,9 +39,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hcg-yX-Eha">
                                         <rect key="frame" x="232" y="4.5" width="64" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="64" id="JbS-vs-J5U"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                                         <state key="normal" title="Country">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
