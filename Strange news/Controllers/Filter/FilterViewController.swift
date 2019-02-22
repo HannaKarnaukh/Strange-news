@@ -11,6 +11,7 @@ import UIKit
 class FilterViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var navigationBar: UINavigationBar!
     
     var parameter: String?
     var selectedParamKey: String?
@@ -27,17 +28,18 @@ class FilterViewController: UIViewController {
         guard let parameter = self.parameter else {
             return
         }
-        self.navigationController?.title = "Select \(parameter)"
+        navigationBar.topItem?.title = "Select \(parameter)"
         switch parameter {
         case QueryParameters.category:
-            self.paramsKeys = Array(ParamValues.category.keys)
+            paramsKeys = Array(ParamValues.category.keys)
         case QueryParameters.country:
-            self.paramsKeys = Array(ParamValues.country.keys)
+            paramsKeys = Array(ParamValues.country.keys)
         case QueryParameters.sources:
-            self.paramsKeys = Array(ParamValues.source.keys)
+            paramsKeys = Array(ParamValues.source.keys)
         default:
             return
         }
+        paramsKeys = paramsKeys?.sorted()
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
