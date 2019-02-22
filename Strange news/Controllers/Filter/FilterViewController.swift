@@ -10,6 +10,7 @@ import UIKit
 
 class FilterViewController: UIViewController {
     
+    // MARK: - Properties
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     
@@ -19,6 +20,7 @@ class FilterViewController: UIViewController {
     
     var onSelectValue: ((String?) -> Void)?
     
+    // MARK: - Methodths
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -48,6 +50,7 @@ class FilterViewController: UIViewController {
     
 }
 
+// MARK: - UITableViewDataSource, UITableViewDelegate
 extension FilterViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let paramsKeys = paramsKeys else {

@@ -46,4 +46,3 @@ extension ArticleTableViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
 }
-

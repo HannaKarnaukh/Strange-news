@@ -9,7 +9,7 @@
 import UIKit
 
 class SourcesViewController: UIViewController {
-    //MARK: - Properties
+    // MARK: Properties
     @IBOutlet weak var tableView: UITableView!
     
     var sources = [Source]()
@@ -20,7 +20,7 @@ class SourcesViewController: UIViewController {
 
     var selectedParamKey: (param: String, key: String?)?
     
-    //MARK: -
+    // MARK: Methodths
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -76,6 +76,7 @@ class SourcesViewController: UIViewController {
         callingFetchSouces()
     }
     
+    // MARK: Navigation
     @IBAction func buttonsPressed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "pushSourceFilterSegue", sender: sender)
     }
@@ -97,7 +98,7 @@ class SourcesViewController: UIViewController {
     }
 }
 
-//MARK:- UITableViewDataSource, UITableViewDelegate
+// MARK: - UITableViewDataSource, UITableViewDelegate
 extension SourcesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sources.count
