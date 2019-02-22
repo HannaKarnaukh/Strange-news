@@ -47,7 +47,7 @@
                         <rect key="frame" x="15" y="42.5" width="290" height="42"/>
                         <string key="text">Labelcate gory categ orycategorycat egorycatego rycateg oryc ategory categorycategor  ycategory  categoryca tegorycategoryc ategoryc ategoryc ate goryc ategorycat egorycategorycate gorycategorycategory</string>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                        <color key="textColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
