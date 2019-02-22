@@ -19,7 +19,7 @@ final class NewsClient: APIClient {
                          country: String?,
                          source: String?,
                          searchText: String?,
-                         page: Int = 0,
+                         page: Int = NewsPaging.startPage,
                          completion: @escaping (Result<News?, APIError>) -> Void) {
         
         let countryValue = country != nil ? ParamValues.country[country!] : nil
@@ -38,7 +38,7 @@ final class NewsClient: APIClient {
     
     func getEverything(searchText: String?,
                        source: String?,
-                       page: Int = 5,
+                       page: Int = NewsPaging.startPage,
                        completion: @escaping (Result<News?, APIError>) -> Void) {
         
         let sourcesValu = source != nil ? ParamValues.source[source!] : nil
