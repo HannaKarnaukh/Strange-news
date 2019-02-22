@@ -14,6 +14,8 @@ class BaseNewsTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    private var tap: UITapGestureRecognizer!
+    
     var newsPaging = NewsPaging()
     let newsClient = NewsClient()
     var articles = [Article]()
@@ -36,9 +38,9 @@ class BaseNewsTableViewController: UIViewController {
         activityIndicator.style = .gray
         view.addSubview(activityIndicator)
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
-        self.view.addGestureRecognizer(tap)
-        tap.cancelsTouchesInView = false
+        tap = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
+        tap.delegate = self
+        view.addGestureRecognizer(tap)
     }
     
     func increasePages() { }
@@ -86,5 +88,14 @@ extension BaseNewsTableViewController: UISearchBarDelegate {
         newsPaging.searchText = searchText
         tapGestureAction()
         tableView.setContentOffset(.zero, animated: false)
+    }
+}
+
+extension BaseNewsTableViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view?.isDescendant(of: self.tableView) == true && !searchBar.isFirstResponder {
+            return false
+        }
+        return true
     }
 }
