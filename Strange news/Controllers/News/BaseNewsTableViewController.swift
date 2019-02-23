@@ -53,6 +53,11 @@ extension BaseNewsTableViewController: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //Paging
+        if indexPath.row == articles.count - 2 {
+            increasePages()
+        }
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.identifier, for: indexPath) as? ArticleTableViewCell else {
             return UITableViewCell()
         }
