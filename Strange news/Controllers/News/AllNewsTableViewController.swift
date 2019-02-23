@@ -88,18 +88,6 @@ class AllNewsTableViewController: BaseNewsTableViewController {
     }
 }
 
-// MARK: - UITableViewDataSource
-extension AllNewsTableViewController {
-    @objc override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.identifier, for: indexPath) as? ArticleTableViewCell else {
-            return UITableViewCell()
-        }
-        cell.article = articles[indexPath.row]
-        cell.setup()
-        return cell
-    }
-}
-
 // MARK: - UISearchBarDelegate
 extension AllNewsTableViewController {
     override func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

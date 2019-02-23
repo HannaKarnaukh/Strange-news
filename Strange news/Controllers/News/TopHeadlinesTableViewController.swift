@@ -85,18 +85,6 @@ class TopHeadlinesTableViewController: BaseNewsTableViewController {
     }
 }
 
-// MARK: - UITableViewDataSource
-extension TopHeadlinesTableViewController {
-    @objc override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.identifier, for: indexPath) as? ArticleTableViewCell else {
-            return UITableViewCell()
-        }
-        cell.article = articles[indexPath.row]
-        cell.setup()
-        return cell
-    }
-}
-
 // MARK: - UISearchBarDelegate
 extension TopHeadlinesTableViewController {
     override func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
