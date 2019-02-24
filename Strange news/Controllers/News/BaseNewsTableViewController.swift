@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class BaseNewsTableViewController: UIViewController {
 
@@ -72,7 +73,10 @@ extension BaseNewsTableViewController: UITableViewDataSource, UITableViewDelegat
         guard let url = articles[indexPath.row].url else {
             return
         }
-        UIApplication.shared.open(url)
+        let config = SFSafariViewController.Configuration()
+        config.entersReaderIfAvailable = true
+        let safariVC = SFSafariViewController(url: url, configuration: config)
+        present(safariVC, animated: true)
     }
 }
 
