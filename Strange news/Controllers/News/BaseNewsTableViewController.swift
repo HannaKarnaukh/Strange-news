@@ -56,7 +56,7 @@ extension BaseNewsTableViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //Paging
-        if indexPath.row == articles.count - 2 && isNextPageAvailable{
+        if indexPath.row == articles.count - 2 && isNextPageAvailable {
             increasePages()
         }
         
