@@ -49,8 +49,8 @@ class AllNewsTableViewController: BaseNewsTableViewController {
                     return
                 }
                 self.isPaging = false
-                
                 self.articles += news.articles
+                self.isNextPageAvailable = !news.articles.isEmpty
                 self.newsPaging.maxPagesCount = news.totalResultsCount
                 print("🐻🐻🐻 \(news.totalResultsCount!)  🐢🐢🐢🐢 \(self.articles.count)")
                 self.tableView.reloadData()

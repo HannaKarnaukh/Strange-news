@@ -49,6 +49,7 @@ class TopHeadlinesTableViewController: BaseNewsTableViewController {
                 }
                 self.isPaging = false
                 self.articles += news.articles
+                self.isNextPageAvailable = !news.articles.isEmpty
                 self.newsPaging.maxPagesCount = news.totalResultsCount
                 self.tableView.reloadData()
                 print("🐦🐦🐦\(news)🐦🐦🐦")

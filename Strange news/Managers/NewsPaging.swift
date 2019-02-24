@@ -17,9 +17,9 @@ struct NewsPaging {
         return 1
     }
     
-    var currentPage: Int {
-        return page
-    }
+//    var currentPage: Int {
+//        return page
+//    }
     
     var category: String?
     var country: String?

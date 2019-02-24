@@ -24,6 +24,7 @@ class BaseNewsTableViewController: UIViewController {
     let activityIndicator = UIActivityIndicatorView()
     
     var isPaging = false
+    var isNextPageAvailable = false
 
     // MARK: Methodths
     override func viewDidLoad() {
@@ -54,7 +55,7 @@ extension BaseNewsTableViewController: UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //Paging
-        if indexPath.row == articles.count - 2 {
+        if indexPath.row == articles.count - 2 && isNextPageAvailable{
             increasePages()
         }
         
