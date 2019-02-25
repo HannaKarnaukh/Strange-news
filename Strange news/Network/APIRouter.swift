@@ -21,11 +21,11 @@ extension APIRouter {
 
     var path: String {
         switch self {
-        case .getTopHeadlines(_):
+        case .getTopHeadlines:
             return "/v2/top-headlines"
-        case .getEverything(_):
+        case .getEverything:
             return "/v2/everything"
-        case.getSources(_):
+        case.getSources:
             return "/v2/sources"
         }
     }
