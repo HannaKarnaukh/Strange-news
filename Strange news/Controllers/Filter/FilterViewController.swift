@@ -16,7 +16,7 @@ class FilterViewController: UIViewController {
     
     var parameter: String?
     var selectedParamKey: String?
-    var paramsKeys: [String]?
+    var paramsKeys = [String]()
     
     var onSelectValue: ((String?) -> Void)?
     
@@ -41,7 +41,7 @@ class FilterViewController: UIViewController {
         default:
             return
         }
-        paramsKeys = paramsKeys?.sorted()
+        paramsKeys = paramsKeys.sorted()
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
@@ -53,17 +53,10 @@ class FilterViewController: UIViewController {
 // MARK: - UITableViewDataSource, UITableViewDelegate
 extension FilterViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let paramsKeys = paramsKeys else {
-            return 0
-        }
         return paramsKeys.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let paramsKeys = paramsKeys else {
-            return UITableViewCell()
-        }
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: FilterTableViewCell.identifier, for: indexPath) as? FilterTableViewCell else {
             return UITableViewCell()
         }
@@ -76,9 +69,6 @@ extension FilterViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let paramsKeys = paramsKeys else {
-            return
-        }
         let key = paramsKeys[indexPath.row]
         
         if selectedParamKey == key {
