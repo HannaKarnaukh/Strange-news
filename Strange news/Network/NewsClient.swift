@@ -26,7 +26,7 @@ final class NewsClient: APIClient {
         let sourcesValu = source != nil ? ParamValues.source[source!] : nil
         
         var request = APIRouter.getTopHeadlines(category, countryValue, sourcesValu, searchText, page).request
-        request.addValue(Constants.apiKey(), forHTTPHeaderField: Constants.apiKeyKey)
+        request.addValue(Constants.apiKey, forHTTPHeaderField: Constants.apiKeyKey)
         
         fetch(with: request, decode: { json -> News? in
             guard let topHeadlines = json as? News else {
@@ -44,7 +44,7 @@ final class NewsClient: APIClient {
         let sourcesValu = source != nil ? ParamValues.source[source!] : nil
         
         var request = APIRouter.getEverything(searchText, sourcesValu, page).request
-        request.setValue(Constants.apiKey(), forHTTPHeaderField: Constants.apiKeyKey)
+        request.setValue(Constants.apiKey, forHTTPHeaderField: Constants.apiKeyKey)
         
         fetch(with: request, decode: { json -> News? in
             guard let news = json as? News else {
